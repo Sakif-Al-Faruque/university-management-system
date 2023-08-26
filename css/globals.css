@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+
+    background-color: aliceblue;
+    position: relative!;
+}
+
+.about-us-content-link-container span{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about-us-content-link-item:hover .about-us-item-img-container{
+  display: block !important;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+
+.aca-card-img-container .card-img-hover-effect{
+  transform: translate(-50%, -50%);
+}
+
+footer{
+  background-color: #292931;
+}
+
+
+@media(max-width: 767px){
+  .nav-logo-bar{
+    width: 50%;
+  }
+  .nav-primary-links-bar{
+    display: none;
+  }
+
+  .nav-secondary-links-bar{
+    display: none;
+  }
+
+  .nav-menu-bar{
+    display: block;
+    width: 50%;
+    text-align: right;
+    padding: .75rem 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* portal page start*/
+
+.portal-container{
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+/* portal page end*/
+
+
+
