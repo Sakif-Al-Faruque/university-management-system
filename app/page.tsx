@@ -4,6 +4,8 @@ import PageBanner from '@/components/Main/PageBanner'
 import SectionHeading from '@/components/Section/SectionHeading'
 import AcademicCard from '@/components/Section/AcademicCard'
 import Footer from '@/components/Footer/Footer'
+import UniStats from '@/components/Section/UniStats'
+import NoticeBoard from '@/components/Section/NoticeBoard'
 import { BannerImage } from '@/asset/images'
 import Image from 'next/image'
 
@@ -91,6 +93,37 @@ export default function Home() {
               <div className="academic-card-item my-20">
                 <AcademicCard title={'Lorem, ipsum.'} description={'Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum.'} details_link={'something'} img={BannerImage}/>
               </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        <section id="university-statistic" className='w-full'>
+          <div className="university-statistic-container w-4/5 mx-auto my-0">
+            <UniStats/>
+          </div>
+        </section>
+
+
+
+
+        <section id="notice-board" className='w-full py-56'>
+          <div className="notice-board-container w-4/5 mx-auto my-0">
+            <SectionHeading 
+                title='notices'
+                description=' adipisicing elit. Lorem ipsum dolor sit amet consectetur.'
+                color='bg-red-600'
+              />
+            <div className="notice-board-content w-full overflow-scroll h-96" >
+              <NoticeBoard date='2020-29-10' title='holiday'/>
+              <NoticeBoard date='2020-29-10' title='holiday'/>
+              <NoticeBoard date='2020-29-10' title='holiday'/>
+              <NoticeBoard date='2020-29-10' title='holiday'/>
+              <NoticeBoard date='2020-29-10' title='holiday'/>
+              <NoticeBoard date='2020-29-10' title='holiday'/>
+              <NoticeBoard date='2020-29-10' title='holiday'/>
+              <NoticeBoard date='2020-29-10' title='holiday'/>
             </div>
           </div>
         </section>
