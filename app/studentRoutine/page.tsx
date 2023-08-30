@@ -1,6 +1,6 @@
 import Routine from "@/components/Feature/Routine";
 
-export default function StudentPayment(){
+export default function StudentRoutine(){
     return(
         <div>
             <Routine/>
