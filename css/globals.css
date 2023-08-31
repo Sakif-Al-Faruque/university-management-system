@@ -102,7 +102,42 @@ footer{
 
 /* portal page end*/
 
+/*  Set notice style starts here */
+.setNotice-formContainer{
+  height: 50vh;
+  width: 80vh;
+  position: absolute;
+  top:25%;
+  left: 35%;
+  background: whitesmoke;
+  padding: 15px;
+}
+ textarea {
+  height: 30vh;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical
+}
 
+.setNotice-btn{
+  outline: 1px solid black;
+  position: relative;
+  left: 60%;
+  margin: 5px 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.setNotice-btn1{
+  outline: 1px solid black;
+  position: relative;
+  left: 65%;
+  margin: 5px 0px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+/*  Set notice style ends here */
 
 
 
