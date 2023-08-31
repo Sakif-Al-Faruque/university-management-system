@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
@@ -16,12 +16,12 @@ export default function Signin(){
     const submission = async () => {
         console.log(user);
 
-        const response = await axios.post('/api/instructor/auth/signin', {...user});
+        const response = await axios.post('/api/admin/auth/signin', {...user});
 
         const resUser = response.data.user;
 
         if(resUser){
-            router.push('/instructor/dashboard');
+            router.push('/admin/dashboard');
         }
     }
     return (
