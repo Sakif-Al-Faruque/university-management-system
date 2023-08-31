@@ -1,3 +1,5 @@
+"use client"
+
 import UserDashboardNav from "@/components/Section/UserDashboardNav"
 
 export default function DashboardLayout({

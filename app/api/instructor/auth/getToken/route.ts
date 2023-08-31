@@ -1,18 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
 
-export async function GET(){
+export async function GET(request: NextRequest){
     try{
+
+        const myToken = request.cookies.get('token')?.value;
         const response = NextResponse.json({
             message: "log out is successful",
-            succes: true
+            succes: true,
+            myToken: myToken
         });
-
-        response.cookies.set("token", "", {
-            expires: new Date(0),
-            httpOnly: true
-        });
-
         return response;
     }catch(error: any){
         return NextResponse.json(

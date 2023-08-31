@@ -1,3 +1,5 @@
+"use client"
+
 import { 
     ClipboardIcon, 
     UserCircleIcon,
@@ -9,10 +11,21 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { StudentLogo } from "@/asset/images";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import { NextResponse } from "next/server";
 
 
 
 export default function UserDashboardNav(){
+
+    const router = useRouter();
+    const LogoutDir = async () =>{
+        const response = await axios.get("/api/instructor/auth/signout");
+        router.push("/instructor/auth/signin");
+    };
+
+
     return (
         <div className="dashboard-nav w-full bg-red-600 relative h-screen box-border">
             <div className="dashboard-nav-header text-center py-8  w-full">
@@ -82,7 +95,7 @@ export default function UserDashboardNav(){
             </ul>
 
             <div className="dashboard-nav-footer text-center py-4 absolute bottom-0 w-full">
-                <a href="#" className="hover:text-white">
+                <a href="#" onClick={LogoutDir} className="hover:text-white">
                         <ArrowLeftOnRectangleIcon 
                             className="w-6 inline-block mr-2"
                         />

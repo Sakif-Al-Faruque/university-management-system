@@ -2,6 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 import Instructor from "@/model/InstructorModel";
 import { Connect } from "@/dbConfig/dbConfig";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 Connect();
 
@@ -24,14 +25,29 @@ export async function POST(request: NextRequest) {
                 message: "password not matched",
             }, {status: 200});
         }
+
+        const tokenObj = {
+            email: user.email,
+            password: user.password
+        } 
+
+
+        const token = jwt.sign(tokenObj, process.env.MY_SECRET!, {expiresIn: "5d"});
         
-        return NextResponse.json({
+        const response = NextResponse.json({
             message: "Signin successful...",
             user: user,
             seccess: true
         },
         {status: 200}
         );
+
+        response.cookies.set("token", token,
+            {httpOnly: true}
+        );
+
+        return response;
+        
     }catch(error: any){
         return NextResponse.json({
             error: error.message
