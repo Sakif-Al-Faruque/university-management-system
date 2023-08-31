@@ -12,7 +12,7 @@ export default function DashboardLayout({
       <div className="dashboard-left-portion">
         <UserDashboardNav/>
       </div>
-      <div className="dashboard-right-portion ">{children}</div>
+      <div className="dashboard-right-portion">{children}</div>
      </div>
   )
 }

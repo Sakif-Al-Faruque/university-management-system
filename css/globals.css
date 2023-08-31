@@ -147,11 +147,6 @@ footer{
   width: 200px;
   box-sizing: border-box;
 }
-.dashboard-right-portion{
-  box-sizing: border-box;
-  /* padding: 20px 20px 20px 150px; */
-  width: calc(100% -200px);
-}
 .dashboard-nav{
   min-width: 200px;
 }
@@ -159,6 +154,13 @@ footer{
   top: 50%;
   transform: translateY(-50%);
 }
+
+
+.dashboard-right-portion{
+  box-sizing: border-box;
+  width: calc(100% - 200px);
+}
+
 
 
 
