@@ -1,6 +1,7 @@
 "use client"
 
-import UserDashboardNav from "@/components/Section/InstructorDashboardNav"
+import UserDashboardNav from "@/components/Section/ApplicantDashboardNav"
+
 
 export default function DashboardLayout({
   children,
