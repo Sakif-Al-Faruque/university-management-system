@@ -1,9 +1,11 @@
 "use client"
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
 import Link from "next/link";
+
 import React from "react";
 
 export default function Signup(){
@@ -21,11 +23,12 @@ export default function Signup(){
     const submission = async () => {
         console.log(user);
 
-        const response = await axios.post('/api/instructor/auth/signup', {...user});
+
+        const response = await axios.post('/api/admin/auth/signup', {...user});
 
         console.log({user: response.data.user});
 
-        router.push('/instructor/auth/signin');
+        router.push('/admin/auth/signin');
     }
     return (
 
@@ -124,7 +127,6 @@ export default function Signup(){
             focus:border-gray-600"
             >Sign Up</button>
         </div>
-
         {/* <div className="flex justify-between">
             <Link href="/admissionCard">Admission Card</Link>
             <Link href="/updateProfile">Update Profile</Link>

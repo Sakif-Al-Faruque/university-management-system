@@ -26,31 +26,6 @@ export default function Signin(){
     }
     return (
         <div>
-            {/* <input 
-                type="email"
-                onChange={(e) => (setUser({...user, email: e.target.value}))}
-                value={user.email}
-                placeholder="email" 
-            /> <br />
-            <input 
-                type="password"
-                onChange={(e) => (setUser({...user, password: e.target.value}))}
-                value={user.password}
-                placeholder="password" 
-            /> <br />
-            <button type="submit" onClick={submission}>signin</button> */}
-
-
-
-
-
-
-
-
-
-
-
-
             <ChakraProvider>
             <Flex
             height={"100vh"} alignItems={"center"} justifyContent={"center"}>
