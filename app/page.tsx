@@ -6,7 +6,16 @@ import AcademicCard from '@/components/Section/AcademicCard'
 import Footer from '@/components/Footer/Footer'
 import UniStats from '@/components/Section/UniStats'
 import NoticeBoard from '@/components/Section/NoticeBoard'
-import { BannerImage } from '@/asset/images'
+import { 
+  BannerImage,
+  AboutOne,
+  AboutTwo,
+  AboutThree,
+  AcaCSE,
+  AcaBBA,
+  AcaEEE,
+  AcaLLB
+ } from '@/asset/images'
 import Image from 'next/image'
 
 export default function Home() {
@@ -27,10 +36,10 @@ export default function Home() {
             <div className="about-us-content w-full">
               <div className="about-us-content-link-container  border-2 flex flex-col relative w-6/12 mx-auto h-96">
                 <div className="about-us-content-link-item text-center">
-                  <span className='z-10 inline-block absolute top-1/4 px-2.5 py-1 uppercase hover:text-2xl hover:text-stone-50 rounded h-16 w-40 bg-zinc-700/50 border-box py-4 duration-1000'>demo1</span>
+                  <span className='z-10 inline-block absolute top-1/4 px-2.5 py-1 uppercase hover:text-2xl hover:text-stone-50 rounded h-16 w-40 bg-zinc-700/50 border-box py-4 duration-1000'>Library</span>
                   <div className="about-us-item-img-container absolute w-full h-full hidden z-0 duration-1000">
                     <Image 
-                      src={BannerImage} 
+                      src={AboutOne} 
                       alt={"banner image"}
                       className="w-full h-full"            
                     />
@@ -38,10 +47,10 @@ export default function Home() {
                 </div>
 
                 <div className="about-us-content-link-item text-center">
-                  <span className='z-10 inline-block absolute top-2/4 px-2.5 py-1 uppercase hover:text-2xl hover:text-stone-50 rounded h-16 w-40 bg-zinc-700/50 border-box py-4 duration-1000'>demo2</span>
+                  <span className='z-10 inline-block absolute top-2/4 px-2.5 py-1 uppercase hover:text-2xl hover:text-stone-50 rounded h-16 w-40 bg-zinc-700/50 border-box py-4 duration-1000'>Canteen</span>
                   <div className="about-us-item-img-container absolute w-full h-full hidden z-0 duration-1000">
                     <Image 
-                      src={BannerImage} 
+                      src={AboutTwo} 
                       alt={"banner image"}
                       className="w-full h-full"            
                     />
@@ -49,10 +58,10 @@ export default function Home() {
                 </div>
 
                 <div className="about-us-content-link-item text-center">
-                  <span className='z-10 inline-block absolute top-3/4 px-2.5 py-1 uppercase hover:text-2xl hover:text-stone-50 rounded h-16 w-40 bg-zinc-700/50 border-box py-4 duration-1000'>demo2</span>
+                  <span className='z-10 inline-block absolute top-3/4 px-2.5 py-1 uppercase hover:text-2xl hover:text-stone-50 rounded h-16 w-40 bg-zinc-700/50 border-box py-4 duration-1000'>Culture</span>
                   <div className="about-us-item-img-container absolute w-full h-full hidden z-0 duration-1000">
                     <Image 
-                      src={BannerImage} 
+                      src={AboutThree} 
                       alt={"banner image"}
                       className="w-full h-full"            
                     />
@@ -79,19 +88,19 @@ export default function Home() {
             />
             <div className="academic-card-container flex flex-row flex-wrap justify-between">
               <div className="academic-card-item my-20">
-                <AcademicCard title={'Lorem, ipsum.'} description={'Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum.'} details_link={'something'} img={BannerImage}/>
+                <AcademicCard title={'computer science'} description={'Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum.'} details_link={'something'} img={AcaCSE}/>
               </div>
 
               <div className="academic-card-item my-20">
-                <AcademicCard title={'Lorem, ipsum.'} description={'Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum.'} details_link={'something'} img={BannerImage}/>
+                <AcademicCard title={'electric engineering'} description={'Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum.'} details_link={'something'} img={AcaEEE}/>
               </div>
 
               <div className="academic-card-item my-20">
-                <AcademicCard title={'Lorem, ipsum.'} description={'Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum.'} details_link={'something'} img={BannerImage}/>
+                <AcademicCard title={'business studies'} description={'Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum.'} details_link={'something'} img={AcaBBA}/>
               </div>
 
               <div className="academic-card-item my-20">
-                <AcademicCard title={'Lorem, ipsum.'} description={'Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum.'} details_link={'something'} img={BannerImage}/>
+                <AcademicCard title={'law'} description={'Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum. Lorem, ipsum.'} details_link={'something'} img={AcaLLB}/>
               </div>
             </div>
           </div>

@@ -43,7 +43,7 @@ export default function PageNav({background}:{background: string}) {
                     <div className="nav-menu-secondary-links-bar w-full border-t-2 border-stone-400"> 
                       <ul className="list-none flex flex-wrap flex-column justify-end">
                         <li className="py-4 block w-full text-right"><a href="/portal" className="text-base hover:text-red-600 uppercase"><EllipsisHorizontalCircleIcon className="w-5 inline"/> <span className="w-6">portal</span></a></li>
-                        <li className="py-4 block w-full text-right"><a href="#" className="text-base hover:text-red-600 uppercase"><PencilIcon className="w-5 inline"/>apply</a></li>
+                        <li className="py-4 block w-full text-right"><a href="/apply" className="text-base hover:text-red-600 uppercase"><PencilIcon className="w-5 inline"/>apply</a></li>
                       </ul>
                     </div>
                   </Disclosure.Panel>
@@ -64,7 +64,7 @@ export default function PageNav({background}:{background: string}) {
           <div className="nav-secondary-links-bar xl:w-1/5 md:w-full"> 
             <ul className="list-none xl:flex xl:flex-wrap xl:flex-row xl:justify-end md:text-center ">
               <li className="py-4 xl:ml-6 inline-block md:mx-3"><a href="/portal" className="text-base hover:text-red-600 uppercase"><EllipsisHorizontalCircleIcon className="w-5 inline"/> <span className="w-6">portal</span></a></li>
-              <li className="py-4 xl:ml-6 inline-block md:mx-3"><a href="#" className="text-base hover:text-red-600 uppercase"><PencilIcon className="w-5 inline"/>apply</a></li>
+              <li className="py-4 xl:ml-6 inline-block md:mx-3"><a href="/apply" className="text-base hover:text-red-600 uppercase"><PencilIcon className="w-5 inline"/>apply</a></li>
             </ul>
           </div>
         </div>

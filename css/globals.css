@@ -29,6 +29,12 @@ body {
     position: relative!;
 }
 
+
+.banner{
+  width: 100%;
+}
+
+
 .about-us-content-link-container span{
   left: 50%;
   transform: translateX(-50%);
@@ -93,6 +99,9 @@ footer{
 /* portal page start*/
 
 .portal-container{
+  transform: translate(-50%, -50%);
+}
+.apply-container{
   transform: translate(-50%, -50%);
 }
 
