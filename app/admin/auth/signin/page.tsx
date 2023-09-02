@@ -1,10 +1,7 @@
 "use client"
-
-import { useState, useEffect } from "react";
-
+import { useState} from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-
 import { Button, ChakraProvider, Flex, FormControl, FormLabel, Heading, Input, } from "@chakra-ui/react";
 
 export default function Signin(){
@@ -15,20 +12,36 @@ export default function Signin(){
         password : ""
     });
 
+
     const submission = async () => {
         console.log(user);
+        if(user.email == null || user.password == null)
+        {
+            alert("Provide email and password");
+        }
+        else
+        {
 
-
-        const response = await axios.post('/api/admin/auth/signin', {...user});
-
-        const resUser = response.data.user;
-
-        if(resUser){
-
-            router.push('/admin/dashboard');
-
+        const response = await axios.post('/api/instructor/auth/signin', {...user});
+        if(response)
+        {
+            const resUser = response.data.user;
+            if(resUser){
+                router.push('/instructor/dashboard');
+            }
+            else
+            {
+                alert("No user found");
+            }
+        }
+        else
+        {
+            alert("network error");
+        }
+        
         }
     }
+
     return (
         <div>
             <ChakraProvider>

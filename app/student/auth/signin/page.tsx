@@ -13,44 +13,37 @@ export default function Signin(){
         password : ""
     });
 
+    
     const submission = async () => {
         console.log(user);
+        if(user.email == null || user.password == null)
+        {
+            alert("Provide email and password");
+        }
+        else
+        {
 
         const response = await axios.post('/api/instructor/auth/signin', {...user});
-
-        const resUser = response.data.user;
-
-        if(resUser){
-            router.push('/instructor/dashboard');
+        if(response)
+        {
+            const resUser = response.data.user;
+            if(resUser){
+                router.push('/instructor/dashboard');
+            }
+            else
+            {
+                alert("No user found");
+            }
+        }
+        else
+        {
+            alert("network error");
+        }
+        
         }
     }
     return (
         <div>
-            {/* <input 
-                type="email"
-                onChange={(e) => (setUser({...user, email: e.target.value}))}
-                value={user.email}
-                placeholder="email" 
-            /> <br />
-            <input 
-                type="password"
-                onChange={(e) => (setUser({...user, password: e.target.value}))}
-                value={user.password}
-                placeholder="password" 
-            /> <br />
-            <button type="submit" onClick={submission}>signin</button> */}
-
-
-
-
-
-
-
-
-
-
-
-
             <ChakraProvider>
             <Flex
             height={"100vh"} alignItems={"center"} justifyContent={"center"}>
