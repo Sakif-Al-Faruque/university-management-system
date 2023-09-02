@@ -24,10 +24,6 @@ const StudentSchema = new mongoose.Schema({
         type: String,
     },
 
-    salary: {
-        type: Number,
-    },
-
     approved: {
         type: Boolean,
         default: false,

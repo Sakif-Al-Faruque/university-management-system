@@ -12,8 +12,7 @@ export async function POST(request: NextRequest) {
             email,
             password,
             phone,
-            address,
-            salary
+            address
         } = await request.json();
 
         const salt = await bcrypt.genSalt(10);
@@ -24,8 +23,7 @@ export async function POST(request: NextRequest) {
             email: email,
             password: hashedPassword,
             phone: phone,
-            address: address,
-            salary: salary
+            address: address
         });
 
         const savedStudent = await student.save();
