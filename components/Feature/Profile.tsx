@@ -1,24 +1,55 @@
 "use client"
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useEffect } from 'react';
+import { Connect } from '@/dbConfig/dbConfig';
+import axios from 'axios';
 
 export default function Profile() {
     const initialProfile = {
-        firstName: 'John',
-        lastName: 'Doe',
-        age: 20,
-        email: 'johndoe@example.com',
-        address: '123 Main Street',
+        fullname: '',
+        email: '',
+        phone: '',
+        address: '',
+        approved: false,
+        usertoken: '',
     };
 
     const [profile, setProfile] = useState(initialProfile);
     const [isEditing, setIsEditing] = useState(false);
 
+    useEffect(() => {
+        async function fetchStudentData() {
+            try {
+                const email = 'mahin@g.com';
+                const response = await axios.post('/api/student/auth/getData', {email});
+
+                const student = response.data.user;
+    
+                if (student) {
+                    setProfile({
+                        fullname: student.fullname,
+                        email: student.email,
+                        phone: student.phone,
+                        address: student.address,
+                        approved: student.approved,
+                        usertoken: student.usertoken,
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching student data:', error);
+            }
+        }
+    
+        fetchStudentData();
+    }, []);    
+
     const handleEditClick = () => {
         setIsEditing(!isEditing);
     };
 
-    const handleSaveClick = () => {
+    const handleSaveClick = async () => {
         setIsEditing(false);
+        const response = await axios.put('/api/student/auth/updateData', {...profile});
+        console.log({user: response.data.user});
     };
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -35,33 +66,22 @@ export default function Profile() {
                 <h1 className="text-2xl font-bold text-black mb-4 text-center">Student Profile</h1>
                 <div className="space-y-4">
                     <div>
-                        <label className="block text-sm font-medium text-black">First Name</label>
+                        <label className="block text-sm font-medium text-black">Name</label>
                         <input
                             type="text"
-                            name="firstName"
-                            value={profile.firstName}
+                            name="fullname"
+                            value={profile.fullname}
                             readOnly={!isEditing}
                             onChange={handleInputChange}
                             className="mt-1 p-2 w-full border rounded-md text-black"
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-black">Last Name</label>
+                        <label className="block text-sm font-medium text-black">Phone</label>
                         <input
                             type="text"
-                            name="lastName"
-                            value={profile.lastName}
-                            readOnly={!isEditing}
-                            onChange={handleInputChange}
-                            className="mt-1 p-2 w-full border rounded-md text-black"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-black">Age</label>
-                        <input
-                            type="number"
-                            name="age"
-                            value={profile.age}
+                            name="phone"
+                            value={profile.phone}
                             readOnly={!isEditing}
                             onChange={handleInputChange}
                             className="mt-1 p-2 w-full border rounded-md text-black"
@@ -73,7 +93,7 @@ export default function Profile() {
                             type="email"
                             name="email"
                             value={profile.email}
-                            readOnly={!isEditing}
+                            readOnly={true}
                             onChange={handleInputChange}
                             className="mt-1 p-2 w-full border rounded-md text-black"
                         />
