@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const AdminSchema = new mongoose.Schema({
-    fullname: {
-        type: String,
-    },
-    
     email: {
         type: String,
         require: true,
@@ -19,15 +15,6 @@ const AdminSchema = new mongoose.Schema({
     phone: {
         type: String,
     },
-
-    address: {
-        type: String,
-    },
-
-    salary: {
-        type: Number,
-    },
-
     usertoken: {
         type: String,
         default: ""
