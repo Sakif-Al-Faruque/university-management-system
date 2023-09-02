@@ -13,7 +13,8 @@ export function middleware(request: NextRequest) {
 
   const isPrivatePathForInstructor = path === '/instructor/dashboard';
   const isPrivatePathForAdmin = path === '/admin/dashboard';
-  const isPrivatePathForApplicant = path === '/applicant/dashboard';
+
+  const isPrivatePathForApplicant = path === '/applicant/dashboard' || path === '/applicant/dashboard/admissionCard';
   
   const isPrivatePathForStudent = path === '/student/dashboard' || path === '/student/dashboard/studentCourseAddDrop' || path === '/student/dashboard/studentGradeBySem' || path === '/student/dashboard/studentPayment' || path === '/student/dashboard/studentProfile' || path === '/student/dashboard/studentRoutine';
 
@@ -73,6 +74,7 @@ export const config = {
 
 
     '/applicant/dashboard',
+    '/applicant/dashboard/admissionCard',
 
 
     '/student/dashboard',

@@ -14,12 +14,10 @@ export default function Signin(){
     });
 
     const submission = async () => {
-        console.log(user);
-
 
         const response = await axios.post('/api/applicant/auth/signin', {...user});
 
-
+        console.log(response);
         const resUser = response.data.user;
 
         if(resUser){
