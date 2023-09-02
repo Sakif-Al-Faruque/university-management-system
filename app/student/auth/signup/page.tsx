@@ -15,17 +15,16 @@ export default function Signup(){
         password : "",
         phone : "",
         address : "",
-        salary : 0
     });
 
     const submission = async () => {
         console.log(user);
 
-        const response = await axios.post('/api/instructor/auth/signup', {...user});
+        const response = await axios.post('/api/student/auth/signup', {...user});
 
         console.log({user: response.data.user});
 
-        router.push('/instructor/auth/signin');
+        router.push('/student/auth/signin');
     }
     return (
 
@@ -97,20 +96,6 @@ export default function Signup(){
                 onChange={(e) => (setUser({...user, phone: e.target.value}))}
                 value={user.phone}
                 placeholder="phone"
-            />
-        </div>
-
-
-        <div className="mb-4">
-            <label htmlFor="salary">salary</label>
-            <input
-                className="p-1 border border-gray-300 rounded-lg
-                mb-4 focus:outline-none focus:border-gray-600"
-                id="salary"
-                type="number"
-                onChange={(e) => (setUser({...user, salary: parseFloat(e.target.value)}))}
-                value={user.salary}
-                placeholder="salary"
             />
         </div>
             <hr />

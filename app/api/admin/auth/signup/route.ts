@@ -8,24 +8,18 @@ Connect();
 export async function POST(request: NextRequest) {
     try{
         const {
-            fullname,
             email,
             password,
-            phone,
-            address,
-            salary
+            phone
         } = await request.json();
 
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
         const admin = new Admin({
-            fullname: fullname,
             email: email,
             password: hashedPassword,
-            phone: phone,
-            address: address,
-            salary: salary
+            phone: phone
         });
 
         const savedAdmin = await admin.save();

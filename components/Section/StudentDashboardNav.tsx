@@ -23,7 +23,7 @@ export default function UserDashboardNav(){
     const router = useRouter();
     const LogoutDir = async () =>{
         const response = await axios.get("/api/instructor/auth/signout");
-        router.push("/instructor/auth/signin");
+        router.push("/student/auth/signin");
     };
 
 

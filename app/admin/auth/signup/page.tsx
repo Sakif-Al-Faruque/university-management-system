@@ -12,12 +12,9 @@ export default function Signup(){
     const router = useRouter();
 
     const [user, setUser] = useState({
-        fullname : "",
         email : "",
         password : "",
-        phone : "",
-        address : "",
-        salary : 0
+        phone : ""
     });
 
     const submission = async () => {
@@ -50,20 +47,6 @@ export default function Signup(){
 
             <hr />
             <hr />
-
-        <div className="mb-4">
-            <label htmlFor="fullname">fullname</label>
-            <input
-                className="p-1 border border-gray-300 rounded-lg 
-                focus:outline-none focus:border-gray-600"
-                id="fullname"
-                type="text"
-                onChange={(e) => (setUser({...user, fullname: e.target.value}))}
-                value={user.fullname}
-                placeholder="fullname"
-            />
-        </div>
-
         <div className="mb-4">
             <label htmlFor="email">email</label>
             <input
@@ -100,20 +83,6 @@ export default function Signup(){
                 onChange={(e) => (setUser({...user, phone: e.target.value}))}
                 value={user.phone}
                 placeholder="phone"
-            />
-        </div>
-
-
-        <div className="mb-4">
-            <label htmlFor="salary">salary</label>
-            <input
-                className="p-1 border border-gray-300 rounded-lg
-                mb-4 focus:outline-none focus:border-gray-600"
-                id="salary"
-                type="number"
-                onChange={(e) => (setUser({...user, salary: parseFloat(e.target.value)}))}
-                value={user.salary}
-                placeholder="salary"
             />
         </div>
             <hr />

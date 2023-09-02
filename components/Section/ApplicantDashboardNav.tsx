@@ -22,7 +22,7 @@ export default function UserDashboardNav(){
     const router = useRouter();
     const LogoutDir = async () =>{
         const response = await axios.get("/api/instructor/auth/signout");
-        router.push("/instructor/auth/signin");
+        router.push("/applicant/auth/signin");
     };
 
 
@@ -57,39 +57,11 @@ export default function UserDashboardNav(){
                 </li>
 
                 <li className="py-4 px-8 text-center text-white hover:bg-white/75 hover:text-red-600">
-                    <a href="#">
+                    <a href="/applicant/dashboard/admissionCard">
                         <AcademicCapIcon 
                             className="w-6 inline-block mr-2"
                         />
-                        <span className="inline-block text-base capitalize">result</span>
-                    </a>
-                </li>
-
-                <li className="py-4 px-8 text-center text-white hover:bg-white/75 hover:text-red-600">
-                    <a href="#">
-                        <ClockIcon 
-                            className="w-6 inline-block mr-2"
-                        />
-                        <span className="inline-block text-base capitalize">schedule</span>
-                    </a>
-                </li>
-
-
-                <li className="py-4 px-8 text-center text-white hover:bg-white/75 hover:text-red-600">
-                    <a href="#">
-                        <BanknotesIcon 
-                            className="w-6 inline-block mr-2"
-                        />
-                        <span className="inline-block text-base capitalize">salary</span>
-                    </a>
-                </li>
-
-                <li className="py-4 px-8 text-center text-white hover:bg-white/75 hover:text-red-600">
-                    <a href="#">
-                        <Cog6ToothIcon 
-                            className="w-6 inline-block mr-2"
-                        />
-                        <span className="inline-block text-base capitalize">settings</span>
+                        <span className="inline-block text-base capitalize">permit</span>
                     </a>
                 </li>
             </ul>
