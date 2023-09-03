@@ -57,7 +57,7 @@ export default function UserDashboardNav(){
                 </li>
 
                 <li className="py-4 px-8 text-center text-white hover:bg-white/75 hover:text-red-600">
-                    <a href="#">
+                    <a href="/instructor/dashboard/putGrades">
                         <AcademicCapIcon 
                             className="w-6 inline-block mr-2"
                         />
@@ -66,7 +66,7 @@ export default function UserDashboardNav(){
                 </li>
 
                 <li className="py-4 px-8 text-center text-white hover:bg-white/75 hover:text-red-600">
-                    <a href="#">
+                    <a href="/instructor/dashboard/schedule">
                         <ClockIcon 
                             className="w-6 inline-block mr-2"
                         />
