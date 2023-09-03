@@ -15,7 +15,7 @@ export default function Signin(){
 
     const submission = async () => {
         console.log(user);
-        if(user.email == null || user.password == null)
+        if(!user.email  || !user.password )
         {
             alert("Provide email and password");
         }
