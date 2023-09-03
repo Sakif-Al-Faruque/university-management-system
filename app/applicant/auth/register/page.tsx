@@ -25,7 +25,7 @@ export default function RegisterPage() {
     username: "",
   });
 
-  const validateInputs = () => {
+  /* const validateInputs = () => {
     const newErrors = {};
 
     if (!user.name.trim()) {
@@ -50,13 +50,13 @@ export default function RegisterPage() {
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
+  }; */
 
   const onRegister = async () => {
-    if (!validateInputs()) {
+    /* if (!validateInputs()) {
       // Validation failed, do not proceed with registration
       return;
-    }
+    } */
 
     console.log(user);
 
