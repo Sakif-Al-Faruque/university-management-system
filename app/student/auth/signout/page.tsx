@@ -14,12 +14,12 @@ export default function Signin(){
     const submission = async () => {
         console.log(user);
 
-        const response = await axios.post('/api/instructor/auth/signin', {...user});
+        const response = await axios.post('/api/student/auth/signin', {...user});
 
         const resUser = response.data.user;
 
         if(resUser){
-            router.push('/instructor/dashboard');
+            router.push('/student/dashboard');
         }
     }
     return (

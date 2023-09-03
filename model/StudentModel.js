@@ -33,6 +33,11 @@ const StudentSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+
+    courses: {
+        type: [String],
+        default: []
+    },
 });
 
 const Student = mongoose.models.students || mongoose.model("students", StudentSchema);
