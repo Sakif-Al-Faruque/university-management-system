@@ -1,6 +1,5 @@
 "use client"
 import React, { useState, ChangeEvent, useEffect } from 'react';
-import { Connect } from '@/dbConfig/dbConfig';
 import axios from 'axios';
 
 export default function Profile() {
@@ -19,7 +18,8 @@ export default function Profile() {
     useEffect(() => {
         async function fetchStudentData() {
             try {
-                const email = 'mahin@g.com';
+                const currenUser = await axios.get('/api/student/auth/getSignedInEmail');
+                const email = currenUser.data.email
                 const response = await axios.post('/api/student/auth/getData', {email});
 
                 const student = response.data.user;

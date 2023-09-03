@@ -5,26 +5,32 @@ import axios from 'axios';
 export default function PaymentCard() {
 
     const [values, setValues] = React.useState({
-        email: 'mahin@g.com',
+        email: '',
         cardNumber: '',
         amount: ''
     });
 
     const handlePayment = async () => {
+        try {
+            const currenUser = await axios.get('/api/student/auth/getSignedInEmail');
+            setValues({...values, email: currenUser.data.email})
+        } catch (error) {
+            console.error('Error fetching student data:', error);
+        }
+        
         if(!values.cardNumber || !values.amount){
             alert("Provide cardNumber and amount");
+            return
         }
-        else{
-            const response = await axios.post('/api/student/auth/makePayment', {...values});
-            if(response)
-            {
-                alert("Payment Successful");
-                setValues({...values,cardNumber:'', amount:''})
-            }
-            else
-            {
-                alert("network error");
-            }
+        const response = await axios.post('/api/student/auth/makePayment', {...values});
+        if(response)
+        {
+            alert("Payment Successful");
+            setValues({...values,cardNumber:'', amount:''})
+        }
+        else
+        {
+            alert("network error");
         }
     };
 
