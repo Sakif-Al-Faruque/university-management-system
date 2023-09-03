@@ -19,10 +19,8 @@ export default function Signin(){
         if(user.email == null || user.password == null)
         {
             alert("Provide email and password");
+            return
         }
-        else
-        {
-
         const response = await axios.post('/api/student/auth/signin', {...user});
         if(response)
         {
@@ -38,8 +36,6 @@ export default function Signin(){
         else
         {
             alert("network error");
-        }
-        
         }
     }
     return (
