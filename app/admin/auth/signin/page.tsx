@@ -22,12 +22,12 @@ export default function Signin(){
         else
         {
 
-        const response = await axios.post('/api/instructor/auth/signin', {...user});
+        const response = await axios.post('/api/admin/auth/signin', {...user});
         if(response)
         {
             const resUser = response.data.user;
             if(resUser){
-                router.push('/instructor/dashboard');
+                router.push('/admin/dashboard');
             }
             else
             {
